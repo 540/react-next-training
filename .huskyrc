@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "yarn tsc --project tsconfig.json --noEmit --skipLibCheck && lint-staged",
+    "pre-push": "echo 'Pre-push 1/2: Running tests...' && yarn test && echo 'Pre-push 2/2: Rebasing master...' && git fetch && git rebase origin/master"
+  }
+}

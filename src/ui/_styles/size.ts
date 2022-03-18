@@ -33,9 +33,7 @@ export const sizes = {
   /** 64 */
   extrahuge: rem(size.extrahuge),
   /** 96 */
-  giant: rem(size.giant),
-  /** Genera tamaños en escala del grid pequeño */
-  smallScale: factor => rem(factor * SMALL_GRID_SIZE),
-  /** Genera tamaños en escala del grid base */
-  baseScale: factor => rem(factor * BASE_GRID_SIZE)
+  giant: rem(size.giant)
 }
+
+export type Spacing = keyof typeof sizes

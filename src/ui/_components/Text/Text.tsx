@@ -1,22 +1,30 @@
 import React, { ReactNode } from 'react'
-import { alignmentCss, color, font, marginsCss } from '../../_styles'
+import { alignmentCss, color, ColorType, font, marginsCss, Spacing } from '../../_styles'
 import styled, { css } from 'styled-components'
 import isUndefined from 'lodash/isUndefined'
 
 interface Props {
-  As: string
+  as: 'p' | 'h1' | 'span'
   children: ReactNode,
-  className: string,
-  title: string,
+  className?: string,
+  title?: string,
+  color?: ColorType,
+  uppercase?: boolean,
+  size?: string,
+  weight?: string,
+  marginBottom?: Spacing,
+  marginTop?: Spacing,
+  marginLeft?: Spacing,
+  marginRight?: Spacing
 }
 
-const TextRaw = ({ As = 'span', children, className, title }: Props) => (
+const TextRaw = ({ as: As = 'span', children, className, title }: Props) => (
   <As className={className} title={title}>
     {children}
   </As>
 )
 
-export const Text = styled(TextRaw)`
+export const Text = styled(TextRaw)<Props>`
   ${marginsCss}
   ${alignmentCss}
 

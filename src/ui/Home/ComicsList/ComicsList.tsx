@@ -29,19 +29,19 @@ const comics = [
 
 export const ComicsList = () => (
   <Layout>
-    <Text As="h1" weight="black" size="h1" marginBottom="small">
+    <Text as="h1" weight="black" size="h1" marginBottom="small">
       Buscador de cómics de Marvel
     </Text>
-    <Text As="p" size="large" marginBottom="large">
+    <Text as="p" size="large" marginBottom="large">
       Este buscador encontrará los cómics en los que aparezcan los dos personajes que selecciones en el formulario
     </Text>
-    <Text As="p" size="medium" marginBottom="base">
+    <Text as="p" size="medium" marginBottom="base">
       Escribe un personaje en la lista
     </Text>
     <ComicInput />
     {comics.map(comic => (
       <Comic key={comic.id}>
-        <Text As="p" weight="bold">
+        <Text as="p" weight="bold">
           {comic.title}
         </Text>
         <Text as="p">{comic.characters.join(', ')}</Text>

@@ -17,3 +17,5 @@ export const color = {
   black: '#000000',
   shadow1: 'rgba(190,200,210,0.2)'
 }
+
+export type ColorType = keyof typeof color;
