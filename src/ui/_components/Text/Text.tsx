@@ -1,22 +1,31 @@
 import React, { ReactNode } from 'react'
-import { alignmentCss, color, font, marginsCss } from '../../_styles'
+import { alignmentCss, color, ColorType, font, marginsCss } from '../../_styles'
 import styled, { css } from 'styled-components'
 import isUndefined from 'lodash/isUndefined'
+import { useTheme } from '../../_context/ThemeContext'
 
 interface Props {
-  As: string
   children: ReactNode,
-  className: string,
-  title: string,
+  as?: 'p' | 'h1' | 'span',
+  className?: string,
+  title?: string,
+  color?: ColorType,
+  size?: string,
+  weight?: string,
+  uppercase?: boolean,
+  marginLeft?: string,
+  marginRight?: string,
+  marginTop?: string,
+  marginBottom?: string
 }
 
-const TextRaw = ({ As = 'span', children, className, title }: Props) => (
-  <As className={className} title={title}>
+const TextRaw = ({ as: As = 'span', children, className, title }: Props) => (
+  <As className={className} title={title} color={color.white}>
     {children}
   </As>
 )
 
-export const Text = styled(TextRaw)`
+export const StyledText = styled(TextRaw)<Props>`
   ${marginsCss}
   ${alignmentCss}
 
@@ -64,3 +73,8 @@ export const Text = styled(TextRaw)`
             font-weight: ${font.weight.regular};
           `}
 `
+
+export const Text = ({ ...rest }: Props) => {
+  const { darkMode } = useTheme()
+  return <StyledText {...rest} color={darkMode ? 'white' : 'black1'}  />
+}
