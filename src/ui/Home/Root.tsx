@@ -1,10 +1,12 @@
 import React from 'react'
-import { GlobalStyles } from '../_styles'
+import { color, GlobalStyles } from '../_styles'
 import { ComicsList } from './ComicsList'
 
-export const Root = () => (
-  <div>
-    <GlobalStyles />
-    <ComicsList />
-  </div>
-)
+export const Root = () => {
+  return (
+    <div style={{ backgroundColor: color.white, height: '100%' }}>
+      <GlobalStyles />
+      <ComicsList />
+    </div>
+  )
+}
