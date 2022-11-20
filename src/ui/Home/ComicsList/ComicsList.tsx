@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Text } from '../../_components/Text'
 import { sizes } from '../../_styles'
 import { Comic as ComicModel } from '../../../core/domain/model/Comic/Comic'
-import { comicService } from '../../../core/infrastructure/services/Comic/comicService'
 import Link from 'next/link'
+import { comicService } from '../../../core/services/Comic/comicService'
 
 export const ComicsList = () => {
   const [comics, setComics] = React.useState<ComicModel[]>([])
@@ -63,4 +63,8 @@ const Layout = styled.div`
 
 const Comic = styled.div`
   margin-bottom: ${sizes.base};
+  
+  :hover {
+    cursor: pointer;
+  }
 `

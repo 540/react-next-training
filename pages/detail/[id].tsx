@@ -1,7 +1,7 @@
 import { Comic } from '../../src/core/domain/model/Comic/Comic'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
-import { comicService } from '../../src/core/infrastructure/services/Comic/comicService'
+import { comicService } from '../../src/core/services/Comic/comicService'
 
 interface Props {
   comic: Comic
