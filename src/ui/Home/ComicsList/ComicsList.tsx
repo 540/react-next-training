@@ -8,8 +8,8 @@ import { Comic as ComicModel } from '../../../core/domain/model/Comic/Comic'
 import { Character } from '../../../core/domain/model/Character/Character'
 import { characterService } from '../../../core/services/Character/characterService'
 import { comicService } from '../../../core/services/Comic/comicService'
-import { apiCharacterRepository } from '../../../core/infrastructure/domain/model/Character/apiCharacterRepository'
-import { apiComicRepository } from '../../../core/infrastructure/domain/model/Comic/apiComicRepository'
+import { apiCharacterRepository } from '../../../core/infrastructure/Character/apiCharacterRepository'
+import { apiComicRepository } from '../../../core/infrastructure/Comic/apiComicRepository'
 
 export const ComicsList = () => {
   const [comics, setComics] = React.useState<ComicModel[]>([])
